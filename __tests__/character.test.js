@@ -6,7 +6,7 @@ describe('Character', () => {
   {
     const newCharacter = new Character("Bill","Mage");
     expect(newCharacter.name).toEqual("Bill");
-    expect(newCharacter.class).toEqual("Mage");
+    expect(newCharacter.role).toEqual("Mage");
 
   });
 });
