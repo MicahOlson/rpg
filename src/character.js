@@ -1,7 +1,6 @@
 export default class Character {
   constructor(name, role) {
     this.name = name;
-    this.role = role;
     this.hp = 50;
     this.int = 50;
     this.str = 50;
@@ -11,4 +10,10 @@ export default class Character {
     this.xp = 0;
     this.level = 1;
   }
-};
+}
+
+export class Mage extends Character {
+  constructor() {
+
+  }
+}
