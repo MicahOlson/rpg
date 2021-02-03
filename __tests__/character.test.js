@@ -1,4 +1,4 @@
-import { Character , Mage , Barbarian } from '../src/character.js';
+import { Character , Mage , Barbarian, Rogue } from '../src/character.js';
 
 describe('Character', () => {
 
@@ -22,13 +22,22 @@ describe('Character', () => {
       expect(newCharacter.int).toEqual(100);
       expect(newCharacter.str).toEqual(25);
   });
+  
   test('Should create Barbarian  obj as an extension to Character', () => {
       const newCharacter = new Barbarian("Fran");
       expect(newCharacter.name).toEqual("Fran");
       expect(newCharacter.role).toEqual("Barb");
       expect(newCharacter.int).toEqual(25);
       expect(newCharacter.str).toEqual(100);
-  })
+  });
+  test('Should create Rogue obj as an extension to Character', () => {
+      const newCharacter = new Rogue("Tim");
+      expect(newCharacter.name).toEqual("Tim");
+      expect(newCharacter.role).toEqual("Rogue");
+      expect(newCharacter.dex).toEqual(100);
+      expect(newCharacter.str).toEqual(35);
+      expect(newCharacter.int).toEqual(35);
+  });
   
 
 

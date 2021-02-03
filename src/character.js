@@ -29,3 +29,9 @@ export class Barbarian extends Character {
     this.str = 100;
   }
 }
+
+export class Rogue extends Character {
+  constructor() {
+
+  }
+}
