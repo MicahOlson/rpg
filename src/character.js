@@ -1,5 +1,5 @@
-export default class Character {
-  constructor(name, role) {
+export class Character {
+  constructor(name) {
     this.name = name;
     this.hp = 50;
     this.int = 50;
@@ -13,7 +13,10 @@ export default class Character {
 }
 
 export class Mage extends Character {
-  constructor() {
-
+  constructor(name) {
+    super(name);
+    this.role = "Mage";
+    this.int = 100;
+    this.str = 25;
   }
 }
