@@ -31,7 +31,12 @@ export class Barbarian extends Character {
 }
 
 export class Rogue extends Character {
-  constructor() {
+  constructor(name) {
+    super(name);
+    this.role = "Rogue";
+    this.dex = 100;
+    this.int = 35;
+    this.str = 35;
 
   }
 }

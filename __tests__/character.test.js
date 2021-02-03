@@ -30,6 +30,7 @@ describe('Character', () => {
       expect(newCharacter.int).toEqual(25);
       expect(newCharacter.str).toEqual(100);
   });
+  
   test('Should create Rogue obj as an extension to Character', () => {
       const newCharacter = new Rogue("Tim");
       expect(newCharacter.name).toEqual("Tim");
