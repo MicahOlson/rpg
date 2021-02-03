@@ -24,6 +24,8 @@ export class Mage extends Character {
 export class Barbarian extends Character {
   constructor(name) {
     super(name);
-
+    this.role = "Barb";
+    this.int = 25;
+    this.str = 100;
   }
 }
