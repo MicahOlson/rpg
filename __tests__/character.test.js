@@ -1,7 +1,4 @@
-// import Character from '../src/character.js';
-// import Mage from '../src/character.js';
-
-import { Character , Mage } from '../src/character.js';
+import { Character , Mage , Barbarian } from '../src/character.js';
 
 describe('Character', () => {
 
@@ -24,9 +21,15 @@ describe('Character', () => {
       expect(newCharacter.role).toEqual("Mage");
       expect(newCharacter.int).toEqual(100);
       expect(newCharacter.str).toEqual(25);
-      console.log(newCharacter);
+  });
+  test('Should create Barbarian  obj as an extension to Character', () => {
+      const newCharacter = new Barbarian("Fran");
+      expect(newCharacter.name).toEqual("Fran");
+      expect(newCharacter.role).toEqual("Barb");
+      expect(newCharacter.int).toEqual(25);
+      expect(newCharacter.str).toEqual(100);
   })
-
+  
 
 
 });

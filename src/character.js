@@ -20,3 +20,10 @@ export class Mage extends Character {
     this.str = 25;
   }
 }
+
+export class Barbarian extends Character {
+  constructor(name) {
+    super(name);
+
+  }
+}
