@@ -10,7 +10,10 @@ export class Character {
     this.xp = 0;
     this.level = 1;
   }
-}
+  attack() {
+
+  }
+};
 
 export class Mage extends Character {
   constructor(name) {
