@@ -5,3 +5,9 @@ export class Wolf {
     this.armor = 1;
   }
 }
+
+export class Orc {
+  constructor() {
+    
+  }
+}
