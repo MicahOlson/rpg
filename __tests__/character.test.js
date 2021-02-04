@@ -78,4 +78,10 @@ describe('Character.attack()', () => {
     expect(newCharacter.attack(newWolf)).toEqual("This round is over; choose your next action.");
   });
 
+  test('.attack() should add xp to character when monster is killed', () => {
+    newWolf.hp = 1;
+    newCharacter.attack(newWolf)
+    expect(newCharacter.xp).toEqual(10);
+  });
+
 });
