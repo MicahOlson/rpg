@@ -40,9 +40,6 @@ describe('Character', () => {
       expect(newCharacter.int).toEqual(35);
   });
   
-    
+
 
 });
-
-
-
