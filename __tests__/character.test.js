@@ -27,7 +27,7 @@ describe('Character', () => {
   test('Should create Barbarian  obj as an extension to Character', () => {
     const newCharacter = new Barbarian("Fran");
     expect(newCharacter.name).toEqual("Fran");
-    expect(newCharacter.role).toEqual("Barb");
+    expect(newCharacter.role).toEqual("Barbarian");
     expect(newCharacter.int).toEqual(25);
     expect(newCharacter.str).toEqual(100);
   });
@@ -58,7 +58,7 @@ describe('Character.attack()', () => {
 
   test('.attack() will also check to see if wolf.hp <= 0', () => {
     newWolf.hp = 1;
-    expect(newCharacter.attack(newWolf)).toEqual("Monster is dead.");
+    expect(newCharacter.attack(newWolf)).toEqual(`${newWolf.constructor.name} is dead.`);
   });
 
   test('.attack() should reduce the value of barb.hp in as return damage from monster', () => {
@@ -71,9 +71,12 @@ describe('Character.attack()', () => {
     newCharacter.hp = 1;
     newWolf.hp = 100;
     expect(newCharacter.attack(newWolf)).toEqual(`${newCharacter.name} is dead.`);
-
     console.log(newCharacter.hp);
-  })
+  });
+
+  test('.attack() should return a "round over" notification if no obj dies', () => {
+    newWolf.hp = 100;
+    expect(newCharacter.attack(newWolf)).toEqual("This round is over; choose your next action.");
+  });
+
 });
-
-
