@@ -18,9 +18,10 @@ export class Character {
     } else {
       this.hp -= Math.ceil(Math.random() * monster.atkDmg + 1);
       if (this.hp <= 0) {
-        return `${this.name} is dead.`;
-      } 
-    }
+      return `${this.name} is dead.`;
+      }
+    }   
+    return "This round is over; choose your next action.";
   }
 };
 

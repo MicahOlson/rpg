@@ -71,7 +71,6 @@ describe('Character.attack()', () => {
     newCharacter.hp = 1;
     newWolf.hp = 100;
     expect(newCharacter.attack(newWolf)).toEqual(`${newCharacter.name} is dead.`);
-    console.log(newCharacter.hp);
   });
 
   test('.attack() should return a "round over" notification if no obj dies', () => {
