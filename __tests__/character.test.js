@@ -47,13 +47,22 @@ describe('Character', () => {
     newCharacter.attack(newWolf);
     expect(newWolf.hp).toBeLessThanOrEqual(30);
   });
+
   test('.attack() will also check to see if wolf.hp <= 0', () => {
     const newCharacter = new Barbarian("Fran");
     const newWolf = new Wolf();
     newWolf.hp = 1;
     expect(newCharacter.attack(newWolf)).toEqual("Monster is dead.");
+  });
 
-  })
+  test('.attack() should reduce the value of barb.hp in as return damage from monster', () => {
+    const newCharacter = new Barbarian("Fran");
+    const newWolf = new Wolf();
+    newCharacter.attack(newWolf);
+    newWolf.hp = 100;
+    expect(newCharacter.hp).toBeLessThanOrEqual(50);
+    console.log(newCharacter.hp);
+  });
 
 
   // test ('Barb.attack should also reduce barb.hp if wolf is able to retaliate', () => {
