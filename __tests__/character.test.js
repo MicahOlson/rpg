@@ -58,8 +58,8 @@ describe('Character', () => {
   test('.attack() should reduce the value of barb.hp in as return damage from monster', () => {
     const newCharacter = new Barbarian("Fran");
     const newWolf = new Wolf();
-    newCharacter.attack(newWolf);
     newWolf.hp = 100;
+    newCharacter.attack(newWolf);
     expect(newCharacter.hp).toBeLessThanOrEqual(50);
     console.log(newCharacter.hp);
   });
