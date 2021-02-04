@@ -10,8 +10,8 @@ export class Character {
     this.xp = 0;
     this.level = 1;
   }
-  attack() {
-
+  attack(monster) {
+    monster.hp -= (Math.ceil(Math.random() * this.str) + 1);
   }
 };
 

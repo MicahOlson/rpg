@@ -47,5 +47,6 @@ describe('Character', () => {
     newCharacter.attack(newWolf);
     //expect(newCharacter.attack(newWolf)).toEqual(newWolf.hp < 35);
     expect(newWolf.hp).toBeLessThan(30);
+    console.log(newWolf.hp);
     });
 });
