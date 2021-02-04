@@ -14,13 +14,16 @@ export class Character {
   attack(monster) {
     monster.hp -= Math.ceil(Math.random() * this.str + 1);
     if (monster.hp <= 0) {
+      //this.xp += monster.xp;
+      //this.levelup();
+      //add in monster armor;
       return `${monster.constructor.name} is dead.`;
     } else {
       this.hp -= Math.ceil(Math.random() * monster.atkDmg + 1);
       if (this.hp <= 0) {
-      return `${this.name} is dead.`;
+        return `${this.name} is dead.`;
       }
-    }   
+    }
     return "This round is over; choose your next action.";
   }
 };
