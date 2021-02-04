@@ -11,7 +11,7 @@ export class Character {
     this.level = 1;
   }
   attack(monster) {
-    monster.hp -= (Math.ceil(Math.random() * this.str) + 1);
+    monster.hp -= Math.ceil(Math.random() * this.str);
   }
 };
 
