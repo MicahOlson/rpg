@@ -16,6 +16,9 @@ export class Character {
       return "Monster is dead."
     } else {
       this.hp -= Math.ceil(Math.random() * monster.atkDmg + 1);
+      if (this.hp <= 0) {
+        return `${this.name} is dead.`
+      } 
     }
   }
 };

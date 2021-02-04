@@ -67,8 +67,9 @@ describe('Character.attack()', () => {
     expect(newCharacter.hp).toBeLessThanOrEqual(50);
   });
 
-  test('if barb.hp <= 0, let player know they died', () =>{
+  test('if barb.hp <= 0, let player know they died', () => {
     newCharacter.hp = 1;
+    newWolf.hp = 100;
     expect(newCharacter.attack(newWolf)).toEqual(`${newCharacter.name} is dead.`);
 
     console.log(newCharacter.hp);
