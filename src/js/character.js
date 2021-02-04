@@ -14,7 +14,7 @@ export class Character {
   attack(monster) {
     monster.hp -= Math.ceil(Math.random() * this.str + 1);
     if (monster.hp <= 0) {
-      //this.xp += monster.xp;
+      this.xp += monster.xp;
       //this.levelup();
       //add in monster armor;
       return `${monster.constructor.name} is dead.`;

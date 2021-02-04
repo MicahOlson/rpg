@@ -6,6 +6,7 @@ describe('Monsters', () => {
     expect(newWolf.hp).toEqual(30);
     expect(newWolf.atkDmg).toEqual(15);
     expect(newWolf.armor).toEqual(1);
+    expect(newWolf.xp).toEqual(10);
   });
   
   test('Should construct an orc obj with properties', () => {
@@ -13,5 +14,6 @@ describe('Monsters', () => {
     expect(newOrc.hp).toEqual(65);
     expect(newOrc.atkDmg).toEqual(35);
     expect(newOrc.armor).toEqual(5);
+    expect(newOrc.xp).toEqual(20);
   });
 });
