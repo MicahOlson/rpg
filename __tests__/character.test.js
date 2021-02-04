@@ -45,7 +45,6 @@ describe('Character', () => {
     const newCharacter = new Barbarian("Fran");
     const newWolf = new Wolf();
     newCharacter.attack(newWolf);
-    //expect(newCharacter.attack(newWolf)).toEqual(newWolf.hp < 35);
     expect(newWolf.hp).toBeLessThanOrEqual(30);
   });
   test('.attack() will also check to see if wolf.hp <= 0', () => {

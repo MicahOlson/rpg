@@ -12,6 +12,9 @@ export class Character {
   }
   attack(monster) {
     monster.hp -= Math.ceil(Math.random() * this.str);
+    if (monster.hp <= 0) {
+      return "Monster is dead."
+    }
   }
 };
 
