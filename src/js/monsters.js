@@ -8,6 +8,8 @@ export class Wolf {
 
 export class Orc {
   constructor() {
-    
+    this.hp = 15;
+    this.atkDmg = 10;
+    this.armor = 5;
   }
 }
