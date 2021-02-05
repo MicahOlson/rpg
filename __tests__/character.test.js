@@ -1,5 +1,5 @@
 import { Character, Mage, Barbarian, Rogue } from '../src/js/character.js';
-import { Wolf } from '../src/js/monsters.js';
+import { Wolf, Orc } from '../src/js/monsters.js';
 
 describe('Character', () => {
 
@@ -85,3 +85,20 @@ describe('Character.attack()', () => {
   });
 
 });
+
+describe('Character.levelup', () => {
+  
+  let newCharacter;
+  let newOrc;
+  beforeEach(() => {
+    newCharacter = new Barbarian("Fran");
+    newOrc = new Orc();
+  });
+
+  // test('Should provide a character with an additional level upon reaching an xp threshold', () => {
+  //   newCharacter.xp = 90;
+  //   newOrc.hp = 1;
+  //   newCharacter.attack(newOrc);
+  //   expect(newCharacter.level).toEqual(2);
+  // })
+})
