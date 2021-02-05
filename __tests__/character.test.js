@@ -95,10 +95,12 @@ describe('Character.levelup', () => {
     newOrc = new Orc();
   });
 
-  // test('Should provide a character with an additional level upon reaching an xp threshold', () => {
-  //   newCharacter.xp = 90;
-  //   newOrc.hp = 1;
-  //   newCharacter.attack(newOrc);
-  //   expect(newCharacter.level).toEqual(2);
-  // })
-})
+  test('Should provide a character with an additional level upon reaching an xp threshold', () => {
+    newCharacter.level = 9;
+    newCharacter.xp = 495;
+    newOrc.hp = 1;
+    expect(newCharacter.attack(newOrc)).toEqual(`${newOrc.constructor.name} is dead. You've leveled up! You're now Level ${newCharacter.level}`);
+    expect(newCharacter.level).toEqual(10);
+    expect(newCharacter.xp).toEqual(15);
+  });
+});

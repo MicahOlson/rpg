@@ -11,27 +11,28 @@ export class Character {
     this.xp = 0;
     this.level = 1;
   }
-  
-  // levelUp() {
-  //   let levelTable = [0, 0, 100];
-  //   for (let i = 2; i <= this.level; i++) {
-  //     levelTable.push(levelTable[i] + 50);
-  //   }
-  //   levelTable.forEach(function(threshold, index) {
-  //     if ((this.xp >= threshold) && (this.level < index)) {
-  //       this.level += 1;
-  //       this.xp -= levelTable[index];
-  //       return `You've leveled up! You're now Level ${this.level}`;
-  //     }
-  //   })
-  // }
+
+  levelUp() {
+    const levelCap = 10;
+    let levelThresholds = [0, 100];
+    for (let i = 1; i < levelCap - 1; i++) {
+      levelThresholds.push(levelThresholds[i] + 50);     
+    }
+    if (this.xp >= levelThresholds[this.level])  {
+      this.xp -= levelThresholds[this.level];
+      this.level += 1;
+      return ` You've leveled up! You're now Level ${this.level}`;
+    } else {
+      return "";
+    }
+  }
 
   attack(monster) {
     monster.hp -= Math.max(Math.ceil(Math.random() * this.str - monster.armor), 1);
     if (monster.hp <= 0) {
       this.xp += monster.xp;
-      // this.levelUp();
-      return `${monster.constructor.name} is dead.`;
+      const levelUpMessage = this.levelUp();
+      return `${monster.constructor.name} is dead.${levelUpMessage}`;
     } else {
       this.hp -= Math.max(Math.ceil(Math.random() * monster.atkDmg), 1);
       if (this.hp <= 0) {
@@ -40,25 +41,6 @@ export class Character {
     }
     return "This round is over; choose your next action.";
   }
-
-  
-  
-  //levelUp() {
-  //   this.level += 1;
-  //   this.xp -= 100;
-  //   if (this.role = "Mage") {
-  //     this.int =+ 10
-  //   }
-  // }
-
-  // levelUp() {
-  //   const lvlThresh = [0,0,100,150,200];
-  //   const currentLevel = this.level;
-  //   this.level = Math.ceil(this.xp / lvlThresh[this.level]);
-  //   if (currentLevel != this.level) {
-  //     return `You've leveled up! You're now Level ${this.level}`
-  //   }
-
 }
 
 export class Mage extends Character {
